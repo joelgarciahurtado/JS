@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8" />
+	<title>DAW0613-Pràctica 02</title>
+	<link href="imatges/favicon.ico" type="image/ico" rel="Shortcut Icon"/>
+	<link href="codi/estil.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header>Dia de la setmana</header>
+	<br />
+
+	<script>
+
+		var dia = prompt("Introdueix un dia del 1 al 31: ");
+		var mes = prompt("Introdueix un mes del 1 al 12: ");
+		var any = prompt("Introdueix un any del 1940 al 2030: ");
+		var bisiesto = 0;
+		var data = new Date(mes+"/"+dia+"/"+any);
+		// el format del objecte va de mes a dia a any, d'aquesta manera no dona cap error ni cap história rara.
+		var dataactual = new Date();
+		var meses = ["Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Septembre","Octubre","Novembre","Decembre"];
+		var diasemana = ["Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte","Diumenge"];
+		var dianom = diasemana[data.getUTCDay()];
+		
+
+		// sistema per filtrar dates incorrectes
+		if(dia > 31 || dia < 1) {
+			alert("el dia introduit no es correcte");
+		} else {
+			if (mes >12 || mes < 1) {
+				alert("el mes introduit no es correcte");
+			} else {
+				if (any >2030 || any <1940) {
+					alert("l'any introduit no es correcte");
+				} else {
+					if (mes==4 && dia >30 || mes==6 && dia >30 || mes==9 && dia >30 || mes==11 && dia >30) {
+						alert("el dia introduit no es correcte");
+					}
+				} 
+			}
+		}
+		//final del sistema per filtrar dates incorrectes
+
+
+		//sistema per detectar si un any es bisiesto
+		if ( any % 4 == 0 || any % 100 == 0 && any % 400 == 0) {
+			var bisiesto = 1;
+			console.log("hola");
+		} else {
+			if (mes ==2 && dia >28) {
+				alert("l'any no es bisest, el dia introduit no es correcte");
+			}
+		}
+		//final del sistema per detectar si un any es bisiesto
+
+		//sistema per canviar el apostrofe en en h3 de mes avall
+			var apostrofe = "";
+				if (mes ==4 || mes ==8 || mes==10) {
+					var apostrofe = "d'";
+				} else {
+					var apostrofe = "de";
+				}
+		//final del sistema del apostrofe
+
+
+		//sistema per canviar la linea temporal del h3 de mes avall
+		var lineatemporal = "";
+			if (data<dataactual) {
+				lineatemporal = "va caure";
+			} else {
+				if (data>dataactual) {
+					lineatemporal = "caurá";
+				} 
+			}
+		//final del sistema per canviar la linea temporal
+	</script>
+
+	<table>
+		<tr>
+			<td><script>document.write(any)</script></td>
+		</tr>
+		<tr>
+			<!-- introduim mes -1 perque la nomenclatura es anglesa i va del 0 al 11, per tant a l'hora d'introduir el mes, lo posem com sempre i després le restem 1 per fer que l'objecte ens doni el mes adequat-->
+			<td><script>document.write(meses[mes-1]);</script></td>
+		</tr>
+		<tr>
+			<td><script>document.write(dia);</script></td>
+		</tr>
+		<tr>
+			<td><script>document.write(dianom);</script></td>
+		</tr>
+	</table>
+		<h3>El dia <script>document.write(dia);</script> <script>document.write(apostrofe);</script> <script>document.write(meses[mes-1]);</script> de <script>document.write(any);</script> <script>document.write(lineatemporal);</script> en: <script>document.write(dianom);</script></h3>
+
+
+
+
+
+	<noscript>
+		El seu navegador no accepta Javascript, si us plau actualitzis a una versió mes moderna.
+	</noscript>
+	</br>
+	<footer>
+		2016 Departament d'Informàtica - INS LA PINEDA - BADALONA<span>DAW M06-Desenvolupament Web en Entorn Client</span>
+	</footer>
+</body>
+</html>
