@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="utf-8" />
+	<title>DAW0613-Pràctica 02</title>
+	<link href="imatges/favicon.ico" type="image/ico" rel="Shortcut Icon"/>
+	<link href="codi/estil.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header>TRAVESSA</header>
+	<br />
+
+	<table>
+		<tr>
+			<th>p</th>
+			<th>1</th>
+			<th>x</th>
+			<th>2</th>
+		</tr>
+
+		<script>
+		var contador1 = 0;
+		var contadorx = 0;
+		var contador2 = 0;
+
+		for (let step = 0; step <15; step++) {
+		 random = Math.floor(Math.random() * 3) +1;
+document.write("<tr>");
+			let result1 = result2 = result3 = "";
+			if (random ==1) {
+				result1 = 1;
+				contador1++;
+			} else if (random ==2) {
+				result2 = "X";
+				contadorx ++;
+			} else {
+				result3 = 2;
+				contador2++;
+			}
+document.write("<td>"+step+"</td><td>"+result1+"</td><td>"+result2+"</td><td>"+result3+"</td>");
+document.write("</tr>");
+		}
+		</script>
+
+	</table>
+
+
+
+	<div>
+		<h6>estadistiques</h6>
+		1=<script>document.write(contador1)</script>
+		<br>
+		x=<script>document.write(contadorx)</script>
+		<br>
+		2=<script>document.write(contador2)</script>
+	</div>
+
+	<noscript>
+		El seu navegador no accepta Javascript, si us plau actualitzis a una versió mes moderna.
+	</noscript>
+	</br>
+	<footer>
+		2016 Departament d'Informàtica - INS LA PINEDA - BADALONA<span>DAW M06-Desenvolupament Web en Entorn Client</span>
+	</footer>
+</body>
+</html>

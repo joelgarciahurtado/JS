@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8" />
+	<title>DAW0613-Pràctica 11</title>
+	<link href="imatges/favicon.ico" type="image/ico" rel="Shortcut Icon"/>
+	<link href="codi/estil.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header>Amb vocal</header>
+	<br />
+	<div id="vocals"></div>
+
+	<script>
+
+		var frase = prompt();
+
+	if (frase.length > 30) {
+	alert("frase massa llarga, introdueix una frase de fins a 30 carácters.");
+} else {
+
+	var ambvocals = "<h3>"+frase+"</h3>"+"<p>"+frase.replace(/[áàaéèeíìióòoúùu]/g,"a")+"</p>"+"<p>"+frase.replace(/[áàaéèeíìióòoúùu]/g,"e")+"</p>"+"<p>"+frase.replace(/[áàaéèeíìióòoúùu]/g,"i")+"</p>"+"<p>"+frase.replace(/[áàaéèeíìióòoúùu]/g,"o")+"</p>"+"<p>"+frase.replace(/[áàaéèeíìióòoúùu]/g,"u")+"</p>";
+}
+
+        /* SORTIDA DE LA VARIABLE CONSTRUIDA AMB CADASCUNA DE LES 5 VOCALS */
+
+        document.getElementById("vocals").innerHTML = ambvocals;
+
+	</script>
+	<noscript>
+		El seu navegador no accepta Javascript, si us plau actualitzis a una versió mes moderna.
+	</noscript>
+	<br />
+	<footer>
+		2016 Departament d'Informàtica - INS LA PINEDA - BADALONA<span>DAW M06-Desenvolupament Web en Entorn Client</span>
+	</footer>
+</body>
+</html>

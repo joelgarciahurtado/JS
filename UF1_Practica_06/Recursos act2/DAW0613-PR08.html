@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="ca">
+<head>
+	<meta charset="utf-8" />
+	<title>DAW0612-Pràctica 08</title>
+	<link href="imatges/favicon.ico" type="image/ico" rel="Shortcut Icon"/>
+	<link href="codi/estil.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header>A l'inrevés</header>
+	<br />
+	<div id="missatge"></div>
+	<h3 id="paraula"></h3>
+	<h4 id="caracters"></h4>
+	<p id="consonants"></p>
+	<p id="vocals"></p>
+	<p id="espais"></p>
+	<p id="especials"></p>
+
+
+	<script>
+
+		/************ COMENÇEU AQUÍ EL VOSTRE CODI ***************************************************************/
+
+
+
+var frase = prompt();
+
+var vocals = 0;
+var consonants = 0;
+var especial = 0;
+var blancs = 0;
+
+frase = frase.toLowerCase();
+var frasearray = frase.split("");
+var fraseinreves = frasearray.reverse();
+fraseinreves = fraseinreves.join("");
+var lfrase = frase.length;
+
+if (lfrase > 30) {
+	alert("frase massa llarga, introdueix una frase de fins a 30 carácters.");
+} else {
+
+      for(i=0;i < lfrase;i++){
+                  
+           if (frasearray[i]=="a" || frasearray[i]=="e" ||frasearray[i]=="i" || frasearray[i]=="o" || frasearray[i]=="u" || frasearray[i]=="á" || frasearray[i]=="é" || frasearray[i]=="í" || frasearray[i]=="ó" || frasearray[i]=="ú" || frasearray[i]=="à" || frasearray[i]=="è" || frasearray[i]=="ì" || frasearray[i]=="ò" || frasearray[i]=="ù" || frasearray[i]=="ä" || frasearray[i]=="ë" || frasearray[i]=="ï" || frasearray[i]=="ö" || frasearray[i]=="ü") {
+            vocals++;
+           } else if (frasearray[i]=="ç" || frasearray[i]=="ñ") {
+            especial++;
+           } else if (frasearray[i]==" ") {
+            blancs++;
+           } else {
+            consonants++;
+           }
+       
+      	}
+
+
+
+
+      }
+
+
+		/************ NO TOQUEU EL SEGÜENT CODI ***************************************************************/
+
+		document.getElementById("missatge").innerHTML = fraseinreves;
+		document.getElementById("paraula").innerHTML = "Paraula o frase original: <span>" + frase + "</span>";
+		document.getElementById("caracters").innerHTML = "Nombre de caràcters: " + lfrase;
+		document.getElementById("consonants").innerHTML = "Consonants: " + consonants;
+		document.getElementById("vocals").innerHTML = "Vocals: " + vocals;
+		document.getElementById("espais").innerHTML = "Espais en blanc: " + blancs;
+		document.getElementById("especials").innerHTML = "Lletres ñ o ç: " + especial;
+
+	</script>
+	<noscript>
+		El seu navegador no accepta Javascript, si us plau actualitzis a una versió mes moderna.
+	</noscript>
+	<br />
+	<footer>
+		2016 Departament d'Informàtica - INS LA PINEDA - BADALONA<span>DAW M06-Desenvolupament Web en Entorn Client</span>
+	</footer>
+</body>
+</html>
