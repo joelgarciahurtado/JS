@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/* Full d'estil general */
+@import 'estil.css';
+
+/* Full d'estil pel control */
+body{font-size: 50px;}
+#explicacio{font-size: 17px;}
+#temps{font-size: 34px;}
+#peu{font-size: 14px;}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8" />
+	<title>DAW-M06UF1-CONTROL ORDINÀRIA</title>
+    <link href="codi/control.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<header>DAW06-CONTROL ORDINÀRIA - Canvi aleatori del color del fons</header>
+	<br />
+	<div id="contenidor">
+	   <div id="explicacio" class="esquerre">
+           <p>Es tracta de fer el codi per poder canviar el color del fons, aleatòriament, cada vegada que actualitzem la pàgina</p>
+           <p>Heu de fer servir, obligatòriament, la cadena de caràcters de la constant anomenada "COLORS", tal com està.</p>
+ 
+		</div>
+    </div>
+
+    <script type="application/javascript">
+
+        /******************************************************************************************
+        **   Poseu aquí el vostre nom:->Joel Garcia Hurtado                            ***********
+        *******************************************************************************************/
+        /* El mateix codi es pot fer servir per les dues constants o qualsevol altre de 10 colors */
+        const COLORS = "red,lavender,yellow,violet,green,cyan,gray,khaki,orange,pink,";
+        //const COLORS ="aquamarine,azure,burlywood,coral,darkgrey,gold,moccasin,palegreen,peru,plum,";
+
+        /******************************************************************************************
+        ************************ AQUI COMENÇA EL VOSTRE CODI **************************************
+        ******************************************************************************************/
+
+        var colorrandom = Math.floor(Math.random() * 10);
+         //declaro una variable per tal de generar un index random a la array.
+
+        var colorsseparats = COLORS.split (",");
+        // declaro la array, separo els continguts de COLORS per comes.
+        
+        document.write(colorsseparats[colorrandom]); 
+        //imprimeixo per pantalla el nom del color.
+
+        document.body.style.backgroundColor=colorsseparats[colorrandom]; 
+        //canvio el color de fons de la pàgina.
+
+
+    </script>
+    
+    <noscript>
+        El seu navegador no accepta Javascript, si us plau actualitzeu-vos a una versió mes moderna.
+    </noscript>
+	<br />
+    <div id="temps">
+		  TEMPS: 120 minuts
+    </div>
+	<footer id="peu">
+		2020 Departament d'Informàtica - INS LA PINEDA - BADALONA<span>DAW M06-Desenvolupament Web en Entorn Client</span>
+	</footer>
+</body>
+</html>
